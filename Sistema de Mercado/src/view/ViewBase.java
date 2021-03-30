@@ -13,6 +13,7 @@ public class ViewBase extends Application{
 		Pane root = FXMLLoader.load(getClass().getResource("ViewBase.fxml"));
 		Scene scene = new Scene(root, 600, 400);
 		arg0.setScene(scene);
+		arg0.setTitle("Mercado");
 		arg0.show();
 		
 	}
