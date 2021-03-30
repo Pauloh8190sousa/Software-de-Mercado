@@ -6,11 +6,11 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class ViewBase extends Application{
+public class ViewLogin extends Application{
 
 	@Override
 	public void start(Stage arg0) throws Exception {
-		Pane root = FXMLLoader.load(getClass().getResource("ViewBase.fxml"));
+		Pane root = FXMLLoader.load(getClass().getResource("ViewLogin.fxml"));
 		Scene scene = new Scene(root, 600, 400);
 		arg0.setScene(scene);
 		arg0.setTitle("Mercado");
