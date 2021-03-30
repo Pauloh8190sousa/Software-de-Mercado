@@ -1,12 +1,13 @@
 .root {
 display: block;
--fx-background-color: olivedrab;
+-fx-background-color: rgb(0, 255, 121);
 }
 .fontStyle{
 -fx-font-size: 16;
 -fx-font-family: "Comic Sans MS";
 }
-.button{
+.button:pressed{
+-fx-background-color: rgb(99, 152, 237);
 }
 .label{
 -fx-text-fill: blue;
