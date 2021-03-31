@@ -10,6 +10,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.HierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
+import system.Admin;
 import system.Estoque;
 
 public class AdminDataBase {
@@ -18,7 +19,7 @@ public class AdminDataBase {
 	   
 	   private static File arquivo;
 	   
-	   public static void save(String estoqueArquivo, Estoque gerenciador) {
+	   public static void save(String estoqueArquivo, Admin gerenciador) {
 	     File arquivo = new File("C:/Mercado Tech");
 	     if (!arquivo.exists())
 	       arquivo.mkdirs(); 
@@ -35,16 +36,16 @@ public class AdminDataBase {
 	     } 
 	   }
 	   
-	   public static Estoque load(String estoqueArquivo) {
+	   public static Admin load(String estoqueArquivo) {
 	     arquivo = new File(String.valueOf(estoqueArquivo) + ".xml");
 	     try {
 	       if (arquivo.exists()) {
 	         FileInputStream fis = new FileInputStream(arquivo);
-	         return (Estoque)xstream.fromXML(fis);
+	         return (Admin)xstream.fromXML(fis);
 	       } 
 	     } catch (FileNotFoundException e) {
 	       e.printStackTrace();
 	     } 
-	     return new Estoque();
+	     return new Admin();
 	   }
 }
