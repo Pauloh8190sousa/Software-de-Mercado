@@ -8,6 +8,9 @@ public class NotaFiscal {
 	public NotaFiscal(ArrayList<Product> product) {
 		this.product = product;
 	}
+	public void addProduct(Product prod){
+		this.product.add(prod);
+	}
 	public float getPreco(){
 		float preco = 0;
 		for(Product p: product){
@@ -28,5 +31,8 @@ public class NotaFiscal {
 			gramas+=p.getGrama()+"g\n";
 		}
 		return gramas;
+	}
+	public ArrayList<Product> getProduct(){
+		return product;
 	}
 }
