@@ -2,6 +2,7 @@ package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javax.swing.JOptionPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import system.GerenciadorAdmin;
 
 public class ControllerViewBase implements Initializable{
 	@FXML
@@ -38,17 +40,27 @@ public class ControllerViewBase implements Initializable{
 			JOptionPane.showMessageDialog(null, "Campo Senha Vazio");
 		}
 		else{
-			Stage s1 = new Stage();
-			 Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
-			 Scene scene = new Scene(root);
-			 
-			 Stage stage = (Stage) gridPane.getScene().getWindow();
-			 stage.close();
-			 s1.setMaximized(true);
-			 s1.setScene(scene);
-			 s1.setTitle("Mercado");
-			 s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
-			 s1.show();
+			GerenciadorAdmin gerenciador = GerenciadorAdmin.getInstance();
+			if(gerenciador.getEmailAdmin()==null&&gerenciador.getSenhaAdmin()==null){
+				JOptionPane.showMessageDialog(null, "Nenhum Administrador no Sistema!\nCadastre um Administrador.");
+				
+			}else if(gerenciador.getEmailAdmin().equals(campoEmail.getText())&& gerenciador.getSenhaAdmin().equals(campoSenha.getText())){
+				Stage s1 = new Stage();
+				 Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
+				 Scene scene = new Scene(root);
+				 
+				 Stage stage = (Stage) gridPane.getScene().getWindow();
+				 stage.close();
+				 s1.setMaximized(true);
+				 s1.setScene(scene);
+				 s1.setTitle("Mercado");
+				 s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
+				 s1.show();
+			}else{
+				JOptionPane.showMessageDialog(null, "Senha ou E-mail incorreto");
+			}
+			campoEmail.setText("");
+			campoSenha.setText("");
 		}
 		
 	}
@@ -68,7 +80,6 @@ public class ControllerViewBase implements Initializable{
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
 		
 	}
 

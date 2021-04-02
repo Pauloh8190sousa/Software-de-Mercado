@@ -5,10 +5,21 @@ import java.util.ArrayList;
 import dataBase.EstoqueDataBase;
 
 public class Caixa {
-	private Estoque estoque = EstoqueDataBase.load("C:/Mercado Tech/estoque.xml");
-	private NotaFiscal nota = new NotaFiscal(new ArrayList<>());
+	private static Estoque estoque = EstoqueDataBase.load("C:/Mercado Tech/estoque");
+	private static NotaFiscal nota = new NotaFiscal(new ArrayList<>());
+	private static Caixa caixa;
 	
-	public Product lerCodBarra(double cod){
+	private Caixa() {
+	}
+	
+	public synchronized static Caixa getInstance(){
+		if(caixa==null){
+			caixa = new Caixa();
+		}
+		return caixa;
+	}
+
+	public static Product lerCodBarra(double cod){
 		return estoque.pesquisar(cod);
 	}
 	public void addProductNotaFiscal(double cod){
@@ -17,17 +28,17 @@ public class Caixa {
 	}
 	public void addProductEstoque(float valor, double cod, String des, float grama){
 		estoque.addProduct(valor, cod, des, grama);
-		EstoqueDataBase.save("C:/Mercado Tech/estoque.xml", estoque);
+		EstoqueDataBase.save("C:/Mercado Tech/estoque", estoque);
 	}
 	private boolean removeProductEstoque(double cod){
 		boolean retorno = estoque.remove(cod);
-		EstoqueDataBase.save("C:/Mercado Tech/estoque.xml", estoque);
+		EstoqueDataBase.save("C:/Mercado Tech/estoque", estoque);
 		return retorno;
 	}
 	public NotaFiscal getNotaFiscal(){
 		return nota;
 	}
-	public void limparNota(){
+	public static void limparNota(){
 		nota = new NotaFiscal(new ArrayList<>());
 	}
 }

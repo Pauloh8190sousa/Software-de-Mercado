@@ -19,11 +19,11 @@ public class AdminDataBase {
 	   
 	   private static File arquivo;
 	   
-	   public static void save(String estoqueArquivo, Admin gerenciador) {
+	   public static void save(String adminArquivo, Admin gerenciador) {
 	     File arquivo = new File("C:/Mercado Tech");
 	     if (!arquivo.exists())
 	       arquivo.mkdirs(); 
-	     arquivo = new File(String.valueOf(estoqueArquivo) + ".xml");
+	     arquivo = new File(String.valueOf(adminArquivo) + ".xml");
 	     String xml = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" ?>\n";
 	     xml = String.valueOf(xml) + xstream.toXML(gerenciador);
 	     try {
@@ -36,8 +36,8 @@ public class AdminDataBase {
 	     } 
 	   }
 	   
-	   public static Admin load(String estoqueArquivo) {
-	     arquivo = new File(String.valueOf(estoqueArquivo) + ".xml");
+	   public static Admin load(String adminArquivo) {
+	     arquivo = new File(String.valueOf(adminArquivo) + ".xml");
 	     try {
 	       if (arquivo.exists()) {
 	         FileInputStream fis = new FileInputStream(arquivo);

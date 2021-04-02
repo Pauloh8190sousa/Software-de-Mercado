@@ -1,6 +1,6 @@
 .root {
 display: block;
--fx-background-color: #1d1d1d;
+-fx-background-color: rgb(0,255,181);
 }
 .fontStyle{
 -fx-font-size: 16;
@@ -8,14 +8,14 @@ display: block;
 }
 .button{
 -fx-padding: 5 22 5 22;   
--fx-border-color: #e2e2e2;
--fx-border-width: 2;
+-fx-border-color: black;
+-fx-border-width: 3;
 -fx-border-radius: 15;
 -fx-background-radius: 0;
--fx-background-color: #1d1d1d;
+-fx-background-color: transparent;
 -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
 -fx-font-size: 11pt;
--fx-text-fill: #d8d8d8;
+-fx-text-fill: black;
 -fx-background-insets: 0 0 0 0, 0, 1, 2;
 }
 .button:pressed{
@@ -25,7 +25,7 @@ display: block;
 .label{
 -fx-font-size: 12pt;
 -fx-font-family: "Segoe UI Semibold";
--fx-text-fill: white;
+-fx-text-fill: black;
 -fx-opacity: 0.8;
 }
 .hbox {
@@ -33,12 +33,12 @@ display: block;
 -fx-spacing: 10;
 }
 .text-field {
--fx-border-color: #e2e2e2;
+-fx-border-color: black;
 -fx-border-width: 2;
 -fx-border-radius: 15;
 -fx-background-radius: 0;
--fx-background-color: #1d1d1d;
--fx-text-fill: rgb(100,250,130);
+-fx-background-color: transparent;
+-fx-text-fill: black;
 }
 
 .text-field:focused {
