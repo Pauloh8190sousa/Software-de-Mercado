@@ -19,8 +19,8 @@ display: block;
 -fx-background-insets: 0 0 0 0, 0, 1, 2;
 }
 .button:pressed{
--fx-text-fill: rgb(0, 250, 100);
--fx-border-color: rgb(0, 250, 100);
+-fx-text-fill: rgb(0, 120, 210);
+-fx-border-color: rgb(0, 120, 210);
 }
 .label{
 -fx-font-size: 12pt;
@@ -38,6 +38,7 @@ display: block;
 -fx-border-radius: 15;
 -fx-background-radius: 0;
 -fx-background-color: transparent;
+-fx-prompt-text-fill: rgb(0,0,234);
 -fx-text-fill: black;
 }
 
