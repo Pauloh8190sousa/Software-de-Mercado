@@ -1,4 +1,4 @@
-package dataBase;
+package tool;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -39,7 +39,7 @@ public class LeitorJSON {
 			return null;
 		}
 	}
-	public boolean transferirParaPrograma(){
+	public boolean transferirCopiaParaPrograma(){
 		JSONObject json = getCopia();
 		if(json!=null){
 			FileWriter fileWriter;
@@ -54,7 +54,7 @@ public class LeitorJSON {
 		return false;
 	}
 	@SuppressWarnings("unused")
-	public boolean transferirParaPrograma(File file){
+	public boolean transferirServerParaPrograma(File file){
 			JSONParser parser = new JSONParser();
 			JSONObject json = null;
 			try {
