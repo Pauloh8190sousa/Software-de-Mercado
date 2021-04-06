@@ -1,4 +1,4 @@
-package system;
+package tool;
 
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;

@@ -1,6 +1,5 @@
 package theme;
 
 public enum Theme {
-
-	CLARO,ESCURO
+	 CLARO,ESCURO;
 }

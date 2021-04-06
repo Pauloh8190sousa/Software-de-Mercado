@@ -19,7 +19,7 @@ public class AdminDataBase {
 	   private static File arquivo;
 	   
 	   public static void save(String adminArquivo, Admin gerenciador) {
-	     File arquivo = new File("C:/Mercado Tech");
+	     File arquivo = new File("C:/Mercado Tech/user/admin");
 	     if (!arquivo.exists())
 	       arquivo.mkdirs(); 
 	     arquivo = new File(String.valueOf(adminArquivo) + ".xml");

@@ -1,23 +1,23 @@
-package system;
+package tool;
 
 import theme.Theme;
 
 public class Config {
 
-	private static Theme theme;
+	private Theme theme;
 	
 	public Config(){
 		themeDefault();
 	}
-	public static void addTheme(Theme tema){
+	public void addTheme(Theme tema){
 		theme = tema;
 	}
-	private static void themeDefault(){
+	private void themeDefault(){
 		if(theme == null){
 			theme = Theme.ESCURO;
 		}
 	}
-	public static Theme getTheme(){
+	public Theme getTheme(){
 		return theme;
 	}
 }
