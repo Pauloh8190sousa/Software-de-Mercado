@@ -10,29 +10,38 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="542.0" prefWidth="750.0" stylesheets="@EstiloCadastrarAdmin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="grid" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="542.0" prefWidth="750.0" stylesheets="@EstiloCadastrarAdmin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ControllerCadastrarAdmin">
    <columnConstraints>
       <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="400.0" prefWidth="700.0" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints maxHeight="165.0" minHeight="10.0" prefHeight="94.0" valignment="CENTER" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="191.0" minHeight="10.0" prefHeight="82.0" valignment="CENTER" />
-      <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="93.0" valignment="CENTER" />
-      <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="95.0" valignment="CENTER" />
-      <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="179.0" valignment="CENTER" />
+      <RowConstraints maxHeight="165.0" minHeight="10.0" prefHeight="140.0" valignment="CENTER" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="165.0" minHeight="10.0" prefHeight="71.0" valignment="CENTER" />
+      <RowConstraints maxHeight="191.0" minHeight="10.0" prefHeight="64.0" valignment="CENTER" />
+      <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="67.0" valignment="CENTER" />
+      <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="70.0" valignment="CENTER" />
+      <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="130.0" valignment="CENTER" />
    </rowConstraints>
    <children>
-      <Label text="Cadastrar" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <Label stylesheets="@EstiloLabel.css" text="Cadastrar" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <GridPane.margin>
             <Insets bottom="3.0" left="3.0" right="2.0" top="20.0" />
          </GridPane.margin>
       </Label>
-      <Label text="E-mail" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+      <Label text="E-mail" GridPane.halignment="LEFT" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="30.0" />
          </GridPane.margin>
       </Label>
-      <TextField promptText="Digite seu e-mail" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <TextField fx:id="campoNome" promptText="Digite seu nome" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="90.0" right="15.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="campoEmail" promptText="Digite seu e-mail" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <GridPane.margin>
             <Insets left="90.0" right="15.0" />
          </GridPane.margin>
@@ -43,12 +52,12 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </TextField>
-      <Label text="Senha" GridPane.rowIndex="2">
+      <Label text="Senha" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets left="30.0" />
          </GridPane.margin>
       </Label>
-      <PasswordField promptText="Digite sua senha" GridPane.rowIndex="2">
+      <PasswordField fx:id="campoSenha" promptText="Digite sua senha" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets left="90.0" right="15.0" />
          </GridPane.margin>
@@ -56,13 +65,13 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </PasswordField>
-      <Button defaultButton="true" mnemonicParsing="false" text="Cadastrar" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-      <Label text="Confirmar Senha" GridPane.rowIndex="3">
+      <Button defaultButton="true" mnemonicParsing="false" onAction="#acaoButtonCadastrar" text="Cadastrar" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+      <Label text="Confirmar Senha" GridPane.rowIndex="4">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
       </Label>
-      <PasswordField promptText="Digite a senha novamente" GridPane.rowIndex="3">
+      <PasswordField fx:id="campoConfirmar" promptText="Digite a senha novamente" GridPane.rowIndex="4">
          <GridPane.margin>
             <Insets left="130.0" right="15.0" />
          </GridPane.margin>
@@ -70,5 +79,10 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </PasswordField>
+      <Label text="Nome" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="30.0" />
+         </GridPane.margin>
+      </Label>
    </children>
 </GridPane>

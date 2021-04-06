@@ -1,8 +1,8 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javax.swing.JOptionPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,8 +43,8 @@ public class ControllerViewBase implements Initializable{
 			GerenciadorAdmin gerenciador = GerenciadorAdmin.getInstance();
 			if(gerenciador.getEmailAdmin()==null&&gerenciador.getSenhaAdmin()==null){
 				JOptionPane.showMessageDialog(null, "Nenhum Administrador no Sistema!\nCadastre um Administrador.");
-				
-			}else if(gerenciador.getEmailAdmin().equals(campoEmail.getText())&& gerenciador.getSenhaAdmin().equals(campoSenha.getText())){
+			}
+			else if(gerenciador.getEmailAdmin().equals(campoEmail.getText())&& gerenciador.getSenhaAdmin().equals(campoSenha.getText())){
 				Stage s1 = new Stage();
 				 Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
 				 Scene scene = new Scene(root);
@@ -78,6 +78,21 @@ public class ControllerViewBase implements Initializable{
 		 s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
 		 s1.show();
 	}
+	@FXML
+	private void acessarViewCadastrarAdmin() throws IOException {
+		Stage s1 = new Stage();
+		 Pane root = FXMLLoader.load(getClass().getResource("/view/ViewCadastrarAdmin.fxml"));
+		 Scene scene = new Scene(root);
+		 
+		 Stage stage = (Stage) gridPane.getScene().getWindow();
+		 stage.close();
+		 s1.setMaximized(true);
+		 s1.setScene(scene);
+		 s1.setTitle("Mercado");
+		 s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
+		 s1.show();
+	}
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		

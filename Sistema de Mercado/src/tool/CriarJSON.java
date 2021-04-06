@@ -10,7 +10,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class criarJSON {
+public class CriarJSON {
 
 	@SuppressWarnings("unchecked")
 	public void criarConfigJSON(String chave, String valor) {

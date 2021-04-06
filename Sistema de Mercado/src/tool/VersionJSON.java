@@ -11,7 +11,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class versionJSON {
+public class VersionJSON {
 	
 	public boolean copia(JSONObject json){
 		File arquivo = new File("C:/Mercado Tech/program_version");
