@@ -10,8 +10,8 @@ Sistema na área mercantil para controle de estoques de produtos além do gerenc
 - [x] **Update de versão**
 - [x] **Modificação de tema do sistema**
 - [ ] **Notificação do sistema**
-- [ ] **Credenciamento do login**
-- [ ] **Salvar de login e logout**
+- [x] **Credenciamento do login**
+- [ ] **Salvar login e logout**
 - ## Sites de apoio para o desenvolvimento
 [DevMedia](https://www.devmedia.com.br/)
 [Stack Overflow](https://pt.stackoverflow.com/)
