@@ -3,6 +3,7 @@ package system;
 public class Admin {
 	private String email;
 	private String senha;
+	private String nome;
 	
 	public String getEmail() {
 		return email;
@@ -16,7 +17,10 @@ public class Admin {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	
-
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 }

@@ -3,7 +3,7 @@ package system;
 import dataBase.AdminDataBase;
 
 public class GerenciadorAdmin {
-	private static Admin admin = AdminDataBase.load("C:/Mercado Tech/admin");
+	private static Admin admin = AdminDataBase.load("C:/Mercado Tech/user/admin/admin");
 	private static GerenciadorAdmin gerenciador;
 	
 	private GerenciadorAdmin(){
@@ -21,13 +21,22 @@ public class GerenciadorAdmin {
 	public String getSenhaAdmin(){
 		return admin.getSenha();
 	}
+	public String getNomeAdmin(){
+		return admin.getNome();
+	}
 	public String getEmailAdmin(){
 		return admin.getEmail();
 	}
-	public static void addSenhaAdmin(String password){
+	public void addSenhaAdmin(String password){
 		admin.setSenha(password);
+		AdminDataBase.save("C:/Mercado Tech/user/admin/admin", admin);
 	}
-	public static void addEmailAdmin(String email){
+	public void addEmailAdmin(String email){
 		admin.setEmail(email);
+		AdminDataBase.save("C:/Mercado Tech/user/admin/admin", admin);
+	}
+	public void addNomeAdmin(String nome){
+		admin.setNome(nome);
+		AdminDataBase.save("C:/Mercado Tech/user/admin/admin", admin);
 	}
 }

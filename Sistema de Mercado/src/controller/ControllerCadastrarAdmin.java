@@ -18,7 +18,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import system.Admin;
 import system.GerenciadorAdmin;
-import tool.CriarJSON;
 
 public class ControllerCadastrarAdmin implements Initializable {
 	@FXML
@@ -41,32 +40,34 @@ public class ControllerCadastrarAdmin implements Initializable {
 				JOptionPane.showMessageDialog(null, "Campo Vazio");
 			} else {
 				if (campoConfirmar.getText().equals(campoSenha.getText())) {
-					Admin admin = new Admin();
-					admin.setEmail(campoEmail.getText());
-					admin.setSenha(campoSenha.getText());
-					AdminDataBase.save("C:/Mercado Tech/user/admin/admin", admin);
+					gerenciadorAdmin.addEmailAdmin(campoEmail.getText());
+					gerenciadorAdmin.addSenhaAdmin(campoSenha.getText());
+					gerenciadorAdmin.addNomeAdmin(campoNome.getText());
 
-					CriarJSON credenciais = new CriarJSON();
-					credenciais.criarCredenciaisJSON(campoEmail.getText(), campoSenha.getText(), campoNome.getText());
-					JOptionPane.showMessageDialog(null, "Administrador Cadastrado!");
-					
-					 Stage s1 = new Stage();
-					 Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
-					 Scene scene = new Scene(root);
-					 
-					 Stage stage = (Stage) grid.getScene().getWindow();
-					 stage.close();
-					 s1.setMaximized(true);
-					 s1.setScene(scene);
-					 s1.setTitle("Mercado");
-					 s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
-					 s1.show();
-				}else{
+					JOptionPane.showMessageDialog(null, "Administrador Cadastrado!\nFaça Login para entrar");
+
+					Stage s1 = new Stage();
+					Pane root = FXMLLoader.load(getClass().getResource("/view/ViewLogin.fxml"));
+					Scene scene = new Scene(root);
+
+					Stage stage = (Stage) grid.getScene().getWindow();
+					stage.close();
+					s1.setMaximized(true);
+					s1.setScene(scene);
+					s1.setTitle("Mercado");
+					s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
+					s1.show();
+				} else {
 					JOptionPane.showMessageDialog(null, "Senha Diferente!");
 				}
 			}
 		} else {
-			JOptionPane.showMessageDialog(null, "Já existe um Administrador");
+			if (campoSenha.getText().equals("") || campoEmail.getText().equals("")
+					|| campoConfirmar.getText().equals("") || campoNome.getText().equals("")) {
+				JOptionPane.showMessageDialog(null, "Campo Vazio");
+			} else {
+				JOptionPane.showMessageDialog(null, "Já existe um Administrador");
+			}
 		}
 	}
 

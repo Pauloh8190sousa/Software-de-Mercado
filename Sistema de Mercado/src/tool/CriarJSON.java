@@ -62,11 +62,8 @@ public class CriarJSON {
 					"C:/Mercado Tech/config/config.json"));
 		}
 		catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
-			e.printStackTrace();
 		} catch (ParseException e) {
-			e.printStackTrace();
 		}
 		return jsonObject;
 	}
@@ -78,11 +75,8 @@ public class CriarJSON {
 					"C:/Mercado Tech/user/credencials/credencials.json"));
 		}
 		catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
-			e.printStackTrace();
 		} catch (ParseException e) {
-			e.printStackTrace();
 		}
 		return jsonObject;
 	}
