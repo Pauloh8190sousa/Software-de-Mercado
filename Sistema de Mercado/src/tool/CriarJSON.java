@@ -12,8 +12,7 @@ import org.json.simple.parser.ParseException;
 
 public class CriarJSON {
 
-	@SuppressWarnings("unchecked")
-	public void criarConfigJSON(String chave, String valor) {
+	public void criarConfigJSON() {
 		JSONObject json = null;
 		FileWriter fileWriter;
 		File arquivo = new File("C:/Mercado Tech/config");
@@ -22,7 +21,6 @@ public class CriarJSON {
 		}
 		try {
 			json = new JSONObject();
-			json.put(chave,valor);
 			fileWriter = new FileWriter("C:/Mercado Tech/config/config.json");
 			fileWriter.write(json.toJSONString());
 			fileWriter.close();
@@ -31,6 +29,52 @@ public class CriarJSON {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	@SuppressWarnings("unchecked")
+	public boolean addChaveEValorConfig(String chave, Object valor){
+		JSONObject json = null;
+		FileWriter fileWriter;
+		File arquivo = new File("C:/Mercado Tech/config");
+		if (!arquivo.exists()) {
+			return false;
+		}
+		JSONParser parser = new JSONParser();
+		try {
+			json = (JSONObject) parser.parse(new FileReader(
+					"C:/Mercado Tech/config/config.json"));
+			json.put(chave, valor);
+			fileWriter = new FileWriter("C:/Mercado Tech/config/config.json");
+			fileWriter.write(json.toJSONString());
+			fileWriter.close();
+		}
+		catch (FileNotFoundException e) {
+		} catch (IOException e) {
+		} catch (ParseException e) {
+		}
+		return true;
+	}
+	@SuppressWarnings("unchecked")
+	public boolean atualizarValorConfig(String chave, Object valor){
+		JSONObject json = null;
+		FileWriter fileWriter;
+		File arquivo = new File("C:/Mercado Tech/config");
+		if (!arquivo.exists()) {
+			return false;
+		}
+		JSONParser parser = new JSONParser();
+		try {
+			json = (JSONObject) parser.parse(new FileReader(
+					"C:/Mercado Tech/config/config.json"));
+			json.replace(chave, valor);
+			fileWriter = new FileWriter("C:/Mercado Tech/config/config.json");
+			fileWriter.write(json.toJSONString());
+			fileWriter.close();
+		}
+		catch (FileNotFoundException e) {
+		} catch (IOException e) {
+		} catch (ParseException e) {
+		}
+		return true;
 	}
 	@SuppressWarnings("unchecked")
 	public void criarCredenciaisJSON(String email, String senha, String nome){

@@ -69,16 +69,18 @@ public class ControllerViewBase implements Initializable {
 				Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
 				Scene scene = new Scene(root);
 
-				CriarJSON credenciais = new CriarJSON();
-				if (credenciais.getCredenciaisJSON() == null) {
+				CriarJSON json = new CriarJSON();
+				if (json.getCredenciaisJSON() == null) {
 					int opcao = JOptionPane.showConfirmDialog(null, "Deseja salvar Credenciais?", "Atenção",
 							JOptionPane.YES_NO_OPTION);
 					if (opcao == JOptionPane.YES_OPTION) {
-						credenciais.criarCredenciaisJSON(gerenciador.getEmailAdmin(), gerenciador.getSenhaAdmin(),
+						json.criarCredenciaisJSON(gerenciador.getEmailAdmin(), gerenciador.getSenhaAdmin(),
 								gerenciador.getNomeAdmin());
 					}
 				}
-
+				json.criarConfigJSON();
+				json.addChaveEValorConfig("Logado", true);
+				
 				Stage stage = (Stage) gridPane.getScene().getWindow();
 				stage.close();
 				s1.setMaximized(true);
