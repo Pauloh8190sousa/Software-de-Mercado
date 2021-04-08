@@ -16,8 +16,8 @@ Sistema na área mercantil para controle de estoques de produtos além do gerenc
 [DevMedia](https://www.devmedia.com.br/)
 [Stack Overflow](https://pt.stackoverflow.com/)
 # Estimativa De Tempo Do Desenvolvimento
-|criação|implementação do modelo de négocio|contrução de interface|junção da view com o model|teste de erros|termino do programa|
-|-------|----------------------------------|----------------------|--------------------------|--------------|-------------------|
-|**29/03/2021**|**30/03/2021 - 03/04/2021**|**30/03/2021 - 12/04/2021**|**13/04/2021 - 20/04/2021**|**21/04/2021 - 28/04/2021**|**30/04/2021**|
+|criação       |implementação do modelo de négocio|   contrução de interface  | junção da view com o model|       teste de erros      |termino do programa|
+|--------------|----------------------------------|---------------------------|---------------------------|---------------------------|-------------------|
+|**29/03/2021**|    **30/03/2021 - 03/04/2021**   |**30/03/2021 - 12/04/2021**|**13/04/2021 - 20/04/2021**|**21/04/2021 - 28/04/2021**|   **30/04/2021**  |
 ## Última atualização
 - Novos estilos adicionados - **07/04/2021**
