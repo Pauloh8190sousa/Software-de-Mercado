@@ -27,8 +27,23 @@ public class ControllerInicio implements Initializable {
 	@FXML
 	private RadioMenuItem escuro;
 
+	
 	@FXML
-	public void mudarTema(ActionEvent event) {
+	private void viewAtualizacao(ActionEvent event) throws IOException{
+		Stage s1 = new Stage();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewUpdate.fxml"));
+		Scene scene = new Scene(root);
+
+		Stage stage = (Stage) border.getScene().getWindow();
+		stage.close();
+		s1.setMaximized(true);
+		s1.setScene(scene);
+		s1.setTitle("Mercado");
+		s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
+		s1.show();
+	}
+	@FXML
+	private void mudarTema(ActionEvent event) {
 		CriarJSON json = new CriarJSON();
 			if (claro.isSelected()) {
 				border.getStylesheets().remove(border.getStylesheets().get(border.getStylesheets().size() - 1));
@@ -50,7 +65,7 @@ public class ControllerInicio implements Initializable {
 	}
 
 	@FXML
-	public void acaoLogout(ActionEvent event) throws IOException {
+	private void acaoLogout(ActionEvent event) throws IOException {
 		Stage s1 = new Stage();
 		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewLogin.fxml"));
 		Scene scene = new Scene(root);

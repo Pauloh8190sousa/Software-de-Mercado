@@ -87,37 +87,18 @@ public class VersionJSON {
 			}
 		}
 	public JSONObject lerJSON() {
-		JSONObject jsonObject;
+		JSONObject jsonObject = null;
 		JSONParser parser = new JSONParser();
-
-		String nome;
-		String desenvolvedor;
-		String data;
-		String hora;
-		String versao;
 
 		try {
 			jsonObject = (JSONObject) parser.parse(new FileReader(
 					"version/version.json"));
-
-			nome = (String) jsonObject.get("Nome");
-			desenvolvedor = (String) jsonObject.get("Desenvolvedor");
-			data = (String) jsonObject.get("Data");
-			hora = (String) jsonObject.get("Hora");
-			versao = (String) jsonObject.get("Versão");
-			System.out.printf(
-					"Nome: %s\nDesenvolvedor: %s\nData: %s\nHora: %s\nVersão: %s\n",
-					nome, desenvolvedor, data, hora, versao);
-			return jsonObject;
 		}
 		catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
-			e.printStackTrace();
 		} catch (ParseException e) {
-			e.printStackTrace();
 		}
-		return null;
+		return jsonObject;
 	}
 	@SuppressWarnings("unchecked")
 	public Object atualizarJSON(Object chave, Object valor){

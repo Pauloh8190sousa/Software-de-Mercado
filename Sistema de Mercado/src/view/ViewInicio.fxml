@@ -22,9 +22,9 @@
                   <MenuItem mnemonicParsing="false" text="Caixa" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Detalhes">
+          <Menu mnemonicParsing="false" text="Sistema">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Sistema" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewAtualizacao" text="Atualizações" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Sobre">
