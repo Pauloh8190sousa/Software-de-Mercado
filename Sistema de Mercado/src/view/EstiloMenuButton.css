@@ -1,14 +1,16 @@
 .menu-button{
--fx-border-width: 0;
--fx-border-color: rgb(0,140,200);
+-fx-background-color: transparent;
+}
+.menu-button:focused{
+-fx-border-width: 2;
+-fx-border-color: rgb(234,50,80);
 }
 .radio-menu-item{
--fx-background-color: rgb(100,50,180);
--fx-border-width: 0;
+-fx-border-width: 2;
+-fx-border-color: rgb(234,50,80);
 }
 .label{
 -fx-font-size: 15pt;
 -fx-font-family: "Segoe UI Semibold";
 -fx-opacity: 1.0;
--fx-text-fill: white;
 }

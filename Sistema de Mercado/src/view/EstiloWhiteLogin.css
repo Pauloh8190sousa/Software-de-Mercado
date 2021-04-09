@@ -1,0 +1,53 @@
+.root {
+display: block;
+-fx-background-color: white;
+}
+.fontStyle{
+-fx-font-size: 16;
+-fx-font-family: "Comic Sans MS";
+}
+.button{
+-fx-padding: 5 22 5 22;   
+-fx-border-color: rgb(234,50,80);
+-fx-border-width: 2;
+-fx-border-radius: 15;
+-fx-background-radius: 0;
+-fx-background-color: white;
+-fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+-fx-font-size: 11pt;
+-fx-text-fill: black;
+-fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+.button:pressed{
+-fx-text-fill: rgb(0, 250, 100);
+-fx-border-color: rgb(0, 250, 100);
+}
+.label{
+-fx-font-size: 12pt;
+-fx-font-family: "Segoe UI Semibold";
+-fx-text-fill: black;
+-fx-opacity: 0.8;
+}
+.hbox {
+-fx-padding: 15;
+-fx-spacing: 10;
+}
+.text-field {
+-fx-prompt-text-fill: black;
+-fx-border-color: rgb(234,50,80);
+-fx-border-width: 2;
+-fx-border-radius: 15;
+-fx-background-radius: 0;
+-fx-background-color: white;
+-fx-text-fill: rgb(100,250,130);
+}
+
+.text-field:focused {
+  -fx-border-width: 0 0 1 0;
+  -fx-text-fill: rgb(10,150,210);
+}
+.borders{
+-fx-border-color: black;
+-fx-border-style: dashed;
+-fx-border-width: 2;
+}

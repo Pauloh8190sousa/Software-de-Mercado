@@ -1,0 +1,54 @@
+.root {
+display: block;
+-fx-background-color: white;
+}
+.fontStyle{
+-fx-font-size: 16;
+-fx-font-family: "Comic Sans MS";
+}
+.menu-bar{
+-fx-background-color: white;
+-fx-border-color: rgb(234,50,80);
+-fx-border-width: 3;
+-fx-border-radius: 10;
+-fx-background-radius: 0;
+}
+.menu{
+-fx-background-color: white;
+}
+.menu:pressed{
+-fx-background-color: rgb(30,181,230);
+}
+.menu-item{
+-fx-border-color: black;
+-fx-border-width: 2;
+}
+.menu-button{
+-fx-background-color: white;
+}
+.button{
+-fx-padding: 5 22 5 22;   
+-fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+-fx-font-size: 12pt;
+-fx-text-fill: rgb(0,180,250);
+-fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+.button:pressed{
+-fx-text-fill: rgb(0, 250, 100);
+-fx-border-color: rgb(0, 250, 100);
+}
+.label{
+-fx-font-size: 15pt;
+-fx-font-family: "Segoe UI Semibold";
+-fx-text-fill: black;
+-fx-opacity: 0.8;
+}
+.hbox {
+-fx-padding: 15;
+-fx-spacing: 10;
+}
+.borders{
+-fx-border-color: black;
+-fx-border-style: dashed;
+-fx-border-width: 2;
+}

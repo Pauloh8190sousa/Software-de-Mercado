@@ -12,7 +12,7 @@
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:id="border" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@EstiloViewInicioCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ControllerInicio">
+<BorderPane fx:id="border" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@EstiloViewInicioCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerInicio">
    <top>
       <MenuBar>
         <menus>
@@ -47,11 +47,11 @@
             <Insets right="12.0" top="10.0" />
          </BorderPane.margin>
          <items>
-            <RadioMenuItem mnemonicParsing="false" text="Claro">
+            <RadioMenuItem fx:id="claro" mnemonicParsing="false" onAction="#mudarTema" text="Claro">
                <toggleGroup>
                   <ToggleGroup fx:id="grupo" />
                </toggleGroup></RadioMenuItem>
-            <RadioMenuItem mnemonicParsing="false" text="Escuro" toggleGroup="$grupo" />
+            <RadioMenuItem fx:id="escuro" mnemonicParsing="false" onAction="#mudarTema" text="Escuro" toggleGroup="$grupo" />
          </items>
          <cursor>
             <Cursor fx:constant="HAND" />

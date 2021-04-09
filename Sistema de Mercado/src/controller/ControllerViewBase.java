@@ -65,9 +65,6 @@ public class ControllerViewBase implements Initializable {
 				JOptionPane.showMessageDialog(null, "Nenhum Administrador no Sistema!\nCadastre um Administrador.");
 			} else if (gerenciador.getEmailAdmin().equals(campoEmail.getText())
 					&& gerenciador.getSenhaAdmin().equals(campoSenha.getText())) {
-				Stage s1 = new Stage();
-				Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
-				Scene scene = new Scene(root);
 
 				CriarJSON json = new CriarJSON();
 				if (json.getCredenciaisJSON() == null) {
@@ -78,9 +75,16 @@ public class ControllerViewBase implements Initializable {
 								gerenciador.getNomeAdmin());
 					}
 				}
-				json.criarConfigJSON();
-				json.addChaveEValorConfig("Logado", true);
-				
+				if (json.getConfigJSON() == null) {
+					json.criarConfigJSON();
+					json.addChaveEValorConfig("Logado", true);
+				}else{
+					json.atualizarValorConfig("Logado", true);
+				}
+				Stage s1 = new Stage();
+				Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
+				Scene scene = new Scene(root);
+
 				Stage stage = (Stage) gridPane.getScene().getWindow();
 				stage.close();
 				s1.setMaximized(true);
@@ -129,6 +133,23 @@ public class ControllerViewBase implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
+		CriarJSON json = new CriarJSON();
+		JSONObject config = json.getConfigJSON();
+		if (config != null) {
+			String tema = (String) config.get("Tema");
+			if (tema != null) {
+				if (tema.equals("claro")) {
+					gridPane.getStylesheets()
+							.remove(gridPane.getStylesheets().get(gridPane.getStylesheets().size() - 1));
+					gridPane.getStylesheets().add(getClass().getResource("/view/EstiloWhiteLogin.css").toString());
+				} else {
+					gridPane.getStylesheets()
+							.remove(gridPane.getStylesheets().get(gridPane.getStylesheets().size() - 1));
+					gridPane.getStylesheets().add(getClass().getResource("/view/EstiloViewLoginCSS.css").toString());
+				}
+			}
+		}
+		config = null;
+		json = null;
 	}
 }
