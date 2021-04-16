@@ -5,6 +5,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileSystemView;
 
 import javafx.event.ActionEvent;
@@ -19,17 +20,19 @@ public class ControllerViewUpdate implements Initializable{
 	
 	@FXML
 	private void procurarUpdate(ActionEvent event){
-//		if(testarConexao()==false){
-//			JOptionPane.showMessageDialog(null, "Sem conexão com a internet");
-//		}else{
+		if(testarConexao()==false){
+			JOptionPane.showMessageDialog(null, "Sem conexão com a internet");
+		}else{
 			progress.setVisible(true);
-			Update up = new Update();
 			FileSystemView system = FileSystemView.getFileSystemView();
 			String path = system.getHomeDirectory().getPath();
-			System.out.println(path+"/teto.mp3");
-			up.dowload(path+"/notificacao.mp3");
-				System.out.println("Executado");
-//		}
+			new Thread(){
+				@Override
+				public void run() {
+					Update.atualizar("URL DO ARQUIVO", path);
+				}
+			}.start();
+		}
 	}
    private static boolean testarConexao() {
      try {
