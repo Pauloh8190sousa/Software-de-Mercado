@@ -20,4 +20,4 @@ Sistema na área mercantil para controle de estoques de produtos além do gerenc
 |--------------|----------------------------------|---------------------------|---------------------------|---------------------------|-------------------|
 |**29/03/2021**|    **30/03/2021 - 03/04/2021**   |**30/03/2021 - 12/04/2021**|**13/04/2021 - 20/04/2021**|**21/04/2021 - 28/04/2021**|   **30/04/2021**  |
 ## Última atualização
-- Adição de interface e andamento do update do sistema - **09/04/2021**
+- Atualização da tela de Update e desenvolvimento do Update de versão - **14/04/2021**
