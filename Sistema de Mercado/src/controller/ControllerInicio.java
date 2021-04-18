@@ -29,6 +29,21 @@ public class ControllerInicio implements Initializable {
 
 	
 	@FXML
+	private void viewCadastrarProduto(ActionEvent event) throws IOException{
+		Stage s1 = new Stage();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewCadastrarProduto.fxml"));
+		Scene scene = new Scene(root);
+
+		Stage stage = (Stage) border.getScene().getWindow();
+		stage.close();
+		s1.setMaximized(true);
+		s1.setScene(scene);
+		s1.setTitle("Mercado");
+		s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
+		s1.show();
+		
+	}
+	@FXML
 	private void viewAtualizacao(ActionEvent event) throws IOException{
 		Stage s1 = new Stage();
 		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewUpdate.fxml"));

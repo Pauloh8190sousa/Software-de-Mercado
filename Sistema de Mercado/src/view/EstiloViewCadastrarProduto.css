@@ -1,0 +1,60 @@
+.root {
+display: block;
+-fx-background-color: rgb(0,150,210);
+}
+.fontStyle{
+-fx-font-size: 16;
+-fx-font-family: "Comic Sans MS";
+}
+.button{
+-fx-padding: 5 22 5 22;   
+-fx-border-color: white;
+-fx-background-color: transparent;
+-fx-font-family: "Times new roman";
+-fx-font-size: 14pt;
+-fx-text-fill: white;
+-fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+.button:pressed{
+-fx-text-fill: black;
+-fx-border-color: black;
+}
+.label{
+-fx-font-size: 14pt;
+-fx-font-family: "Times new roman";
+-fx-text-fill: black;
+-fx-opacity: 0.7;
+}
+.hbox {
+-fx-padding: 15;
+-fx-spacing: 10;
+}
+.text-field {
+-fx-border-width: 2;
+-fx-border-color: #e2e2e2;
+-fx-font-size: 11pt;
+-fx-background-color: transparent;
+-fx-prompt-text-fill: white;
+-fx-text-fill: white;
+}
+.date-picker> .text-field {
+-fx-background-color: black;
+-fx-prompt-text-fill:white;
+-fx-opacity: 0.7;
+-fx-text-fill: white;
+
+}
+.date-picker> .text-field:focused{
+-fx-background-color: white;
+-fx-text-fill: black;
+-fx-opacity: 0.6;	
+}
+.text-field:focused {
+  -fx-border-width: 0 0 1 0;
+  -fx-text-fill: white;
+}
+.borders{
+-fx-border-color: black;
+-fx-border-style: dashed;
+-fx-border-width: 2;
+}
