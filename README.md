@@ -18,6 +18,8 @@ Sistema na área mercantil para controle de estoques de produtos além do gerenc
 # Estimativa De Tempo Do Desenvolvimento
 |criação       |implementação do modelo de négocio|   contrução de interface  | junção da view com o model|       teste de erros      |termino do programa|
 |--------------|----------------------------------|---------------------------|---------------------------|---------------------------|-------------------|
-|**29/03/2021**|    **30/03/2021 - 03/04/2021**   |**30/03/2021 - 12/04/2021**|**13/04/2021 - 20/04/2021**|**21/04/2021 - 28/04/2021**|   **30/04/2021**  |
+|**29/03/2021**|    **30/03/2021 - 03/04/2021**   |**30/03/2021 - 18/04/2021**|**29/04/2021 - 08/04/2021**|**10/04/2021 - 18/05/2021**|   **20/05/2021**  |
 ## Última atualização
-- Atualização da tela de Update e desenvolvimento do Update de versão - **14/04/2021**
+- Update completo, e construção da view de cadastrar produtos. - **28/04/2021**
+- Andamento da view listar produtos. - **28/04/2021**
+- Adicionado notificações com a API TryTester. - **28/04/2021**
