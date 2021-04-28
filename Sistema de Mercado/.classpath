@@ -10,7 +10,7 @@
 	<classpathentry kind="lib" path="APIs/xom-1.1.jar"/>
 	<classpathentry kind="lib" path="APIs/xstream-1.4.7.jar"/>
 	<classpathentry kind="lib" path="APIs/xstream-benchmark-1.4.7.jar"/>
-	<classpathentry kind="lib" path="APIs/dropbox-core-sdk-4.0.0.jar"/>
 	<classpathentry kind="lib" path="APIs/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="APIs/TrayTester.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

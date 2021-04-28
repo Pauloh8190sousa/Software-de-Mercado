@@ -20,6 +20,7 @@
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#viewCadastrarProduto" text="Cadastrar Produto" />
                   <MenuItem mnemonicParsing="false" text="Caixa" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewListarProduto" text="Lista de Produtos" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Sistema">
