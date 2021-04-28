@@ -19,7 +19,7 @@ Sistema na área mercantil para controle de estoques de produtos além do gerenc
 - [ ] **Otimização do código e interface de sistema**
 - [ ] **Teste e correções de erros previstos no sistema**
 - [ ] **Correção de erros inesperados**
-- [ ] **Armazenamento em cache para maior eficiencia e rápides do sistema**  
+- [ ] **Armazenamento em cache para maior eficiencia e rápidez do sistema**  
 - ## Sites de apoio para o desenvolvimento
 [DevMedia](https://www.devmedia.com.br/)
 [Stack Overflow](https://pt.stackoverflow.com/)
