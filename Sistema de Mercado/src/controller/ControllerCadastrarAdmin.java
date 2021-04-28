@@ -3,8 +3,6 @@ package controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javax.swing.JOptionPane;
-import dataBase.AdminDataBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,8 +14,11 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import system.Admin;
+import javafx.util.Duration;
 import system.GerenciadorAdmin;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 public class ControllerCadastrarAdmin implements Initializable {
 	@FXML
@@ -37,14 +38,26 @@ public class ControllerCadastrarAdmin implements Initializable {
 		if (gerenciadorAdmin.getEmailAdmin() == null && gerenciadorAdmin.getSenhaAdmin() == null) {
 			if (campoSenha.getText().equals("") || campoEmail.getText().equals("")
 					|| campoConfirmar.getText().equals("") || campoNome.getText().equals("")) {
-				JOptionPane.showMessageDialog(null, "Campo Vazio");
+				TrayNotification tray = new TrayNotification();
+				AnimationType type = AnimationType.POPUP;
+				tray.setAnimationType(type);
+				tray.setTitle("Verefique os campos");
+				tray.setMessage("Campo vazio");
+				tray.setNotificationType(NotificationType.ERROR);
+				tray.showAndDismiss(Duration.millis(2000));
 			} else {
 				if (campoConfirmar.getText().equals(campoSenha.getText())) {
 					gerenciadorAdmin.addEmailAdmin(campoEmail.getText());
 					gerenciadorAdmin.addSenhaAdmin(campoSenha.getText());
 					gerenciadorAdmin.addNomeAdmin(campoNome.getText());
 
-					JOptionPane.showMessageDialog(null, "Administrador Cadastrado!\nFaça Login para entrar");
+					TrayNotification tray = new TrayNotification();
+					AnimationType type = AnimationType.POPUP;
+					tray.setAnimationType(type);
+					tray.setTitle("Administrador Cadastrado");
+					tray.setMessage("Faça login para entrar");
+					tray.setNotificationType(NotificationType.ERROR);
+					tray.showAndDismiss(Duration.millis(2000));
 
 					Stage s1 = new Stage();
 					Pane root = FXMLLoader.load(getClass().getResource("/view/ViewLogin.fxml"));
@@ -58,15 +71,33 @@ public class ControllerCadastrarAdmin implements Initializable {
 					s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
 					s1.show();
 				} else {
-					JOptionPane.showMessageDialog(null, "Senha Diferente!");
+					TrayNotification tray = new TrayNotification();
+					AnimationType type = AnimationType.POPUP;
+					tray.setAnimationType(type);
+					tray.setTitle("ATENÇÃO!");
+					tray.setMessage("Senha diferente!");
+					tray.setNotificationType(NotificationType.ERROR);
+					tray.showAndDismiss(Duration.millis(2000));
 				}
 			}
 		} else {
 			if (campoSenha.getText().equals("") || campoEmail.getText().equals("")
 					|| campoConfirmar.getText().equals("") || campoNome.getText().equals("")) {
-				JOptionPane.showMessageDialog(null, "Campo Vazio");
+				TrayNotification tray = new TrayNotification();
+				AnimationType type = AnimationType.POPUP;
+				tray.setAnimationType(type);
+				tray.setTitle("ATENÇÃO!");
+				tray.setMessage("Campo vazio");
+				tray.setNotificationType(NotificationType.ERROR);
+				tray.showAndDismiss(Duration.millis(2000));
 			} else {
-				JOptionPane.showMessageDialog(null, "Já existe um Administrador");
+				TrayNotification tray = new TrayNotification();
+				AnimationType type = AnimationType.POPUP;
+				tray.setAnimationType(type);
+				tray.setTitle("Mensagem do Sistema");
+				tray.setMessage("Administrador já cadastrado");
+				tray.setNotificationType(NotificationType.ERROR);
+				tray.showAndDismiss(Duration.millis(2000));
 			}
 		}
 	}
