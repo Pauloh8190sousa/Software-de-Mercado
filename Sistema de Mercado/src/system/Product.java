@@ -1,14 +1,13 @@
 package system;
 
-import java.time.LocalDate;
 
 public class Product {
 	private float preco;
 	private double codBarra;
 	private String descricao;
 	private float grama;
-	private LocalDate dataValidade;
-	private LocalDate dataFabricacao;
+	private String dataValidade;
+	private String dataFabricacao;
 	
 	public float getPreco() {
 		return preco;
@@ -34,16 +33,16 @@ public class Product {
 	public void setGrama(float grama) {
 		this.grama = grama;
 	}
-	public LocalDate getDataValidade() {
+	public String getDataValidade() {
 		return dataValidade;
 	}
-	public void setDataValidade(LocalDate dataValidade) {
+	public void setDataValidade(String dataValidade) {
 		this.dataValidade = dataValidade;
 	}
-	public LocalDate getDataFabricacao() {
+	public String getDataFabricacao() {
 		return dataFabricacao;
 	}
-	public void setDataFabricacao(LocalDate dataFabricacao) {
+	public void setDataFabricacao(String dataFabricacao) {
 		this.dataFabricacao = dataFabricacao;
 	}
 	

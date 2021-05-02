@@ -9,10 +9,16 @@ import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
+import javafx.scene.image.Image;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import tool.Update;
 import tray.animations.AnimationType;
@@ -26,6 +32,8 @@ public class ControllerViewUpdate implements Initializable {
 	private ProgressIndicator indicador;
 	@FXML
 	private Label texto;
+	@FXML
+	private BorderPane border;
 	private float megabytes;
 
 	@FXML
@@ -84,6 +92,7 @@ public class ControllerViewUpdate implements Initializable {
 									tray.setNotificationType(NotificationType.SUCCESS);
 									tray.showAndDismiss(Duration.millis(2000));
 									texto.setText("Nenhum atualização disponivel no momento");
+									indicador.setProgress(1);
 								});
 								return null;
 							}
@@ -107,7 +116,20 @@ public class ControllerViewUpdate implements Initializable {
 			return false;
 		}
 	}
+	@FXML
+	private void voltar(ActionEvent event) throws IOException{
+		Stage s1 = new Stage();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
+		Scene scene = new Scene(root);
 
+		Stage stage = (Stage) border.getScene().getWindow();
+		stage.close();
+		s1.setMaximized(true);
+		s1.setScene(scene);
+		s1.setTitle("Mercado");
+		s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
+		s1.show();
+	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub

@@ -17,9 +17,9 @@ public class EstoqueDataBase {
 	   private static File arquivo;
 	   
 	   public static void save(String estoqueArquivo, Estoque gerenciador) {
-	     File arquivo = new File("C:/Mercado Tech/data/estoques");
-	     if (!arquivo.exists())
-	       arquivo.mkdirs(); 
+//	     File arquivo = new File("C:/Mercado Tech/data/estoques");
+//	     if (!arquivo.exists())
+//	       arquivo.mkdirs(); 
 	     arquivo = new File(String.valueOf(estoqueArquivo) + ".xml");
 	     String xml = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" ?>\n";
 	     xml = String.valueOf(xml) + xstream.toXML(gerenciador);
