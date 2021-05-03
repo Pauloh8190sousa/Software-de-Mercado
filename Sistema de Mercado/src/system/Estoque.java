@@ -31,5 +31,7 @@ public class Estoque {
 		}
 		return null;
 	}
-	
+	public ArrayList<Product> getProdutos(){
+		return produtos;
+	}
 }

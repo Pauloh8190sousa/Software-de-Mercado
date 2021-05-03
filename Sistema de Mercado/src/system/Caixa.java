@@ -39,4 +39,7 @@ public class Caixa {
 	public static void limparNota(){
 		nota = new NotaFiscal(new ArrayList<>());
 	}
+	public static ArrayList<Product> getProdutos(){
+		return estoque.getProdutos();
+	}
 }

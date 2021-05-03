@@ -72,7 +72,7 @@ public class ControllerViewCadastrarProduto implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		UnaryOperator<Change> filter = change ->{
 			String text = change.getControlNewText();
-			if(text.matches("^[/[0-9].?!]*") && text.length()<=5){
+			if(text.matches("^[/[0-9].?!]*")){
 				return change;
 			}
 			return null;
@@ -83,7 +83,7 @@ public class ControllerViewCadastrarProduto implements Initializable{
 		
 		UnaryOperator<Change> filter2 = change ->{
 			String text = change.getControlNewText();
-			if(text.matches("^[0-9]*") && text.length()<=5){
+			if(text.matches("^[0-9]*")){
 				return change;
 			}
 			return null;
@@ -93,7 +93,7 @@ public class ControllerViewCadastrarProduto implements Initializable{
 		
 		UnaryOperator<Change> filter3 = change ->{
 			String text = change.getControlNewText();
-			if(text.matches("^[/[0-9].?!]*") && text.length()<=5){
+			if(text.matches("^[/[0-9].?!]*")){
 				return change;
 			}
 			return null;
