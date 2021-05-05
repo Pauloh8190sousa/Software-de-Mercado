@@ -11,7 +11,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -29,46 +28,26 @@ public class ControllerInicio implements Initializable {
 
 	@FXML
 	private void viewListarProduto(ActionEvent event) throws IOException{
-		Stage s1 = new Stage();
-		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewListarProdutos.fxml"));
-		Scene scene = new Scene(root);
-
 		Stage stage = (Stage) border.getScene().getWindow();
-		stage.close();
-		s1.setMaximized(true);
-		s1.setScene(scene);
-		s1.setTitle("Mercado");
-		s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
-		s1.show();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewListarProdutos.fxml"));
+		Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+		stage.setScene(scene);
 	}
 	@FXML
 	private void viewCadastrarProduto(ActionEvent event) throws IOException{
-		Stage s1 = new Stage();
-		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewCadastrarProduto.fxml"));
-		Scene scene = new Scene(root);
-
 		Stage stage = (Stage) border.getScene().getWindow();
-		stage.close();
-		s1.setMaximized(true);
-		s1.setScene(scene);
-		s1.setTitle("Mercado");
-		s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
-		s1.show();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewCadastrarProduto.fxml"));
+		Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+		stage.setScene(scene);
 		
 	}
 	@FXML
 	private void viewAtualizacao(ActionEvent event) throws IOException{
-		Stage s1 = new Stage();
-		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewUpdate.fxml"));
-		Scene scene = new Scene(root);
-
 		Stage stage = (Stage) border.getScene().getWindow();
-		stage.close();
-		s1.setMaximized(true);
-		s1.setScene(scene);
-		s1.setTitle("Mercado");
-		s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
-		s1.show();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewUpdate.fxml"));
+		Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+		stage.setScene(scene);
+		
 	}
 	@FXML
 	private void mudarTema(ActionEvent event) {
@@ -94,20 +73,13 @@ public class ControllerInicio implements Initializable {
 
 	@FXML
 	private void acaoLogout(ActionEvent event) throws IOException {
-		Stage s1 = new Stage();
+		Stage stage = (Stage) border.getScene().getWindow();
 		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewLogin.fxml"));
-		Scene scene = new Scene(root);
+		Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
 
 		CriarJSON json = new CriarJSON();
 		json.atualizarValorConfig("Logado", false);
-
-		Stage stage = (Stage) border.getScene().getWindow();
-		stage.close();
-		s1.setMaximized(true);
-		s1.setScene(scene);
-		s1.setTitle("Mercado");
-		s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
-		s1.show();
+		stage.setScene(scene);
 	}
 
 	@Override

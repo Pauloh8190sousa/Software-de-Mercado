@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane fx:id="border" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerViewUpdate">
+<BorderPane fx:id="border" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="542.0" prefWidth="750.0" stylesheets="@EstiloViewInicioCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerViewUpdate">
    <left>
-      <Button mnemonicParsing="false" onAction="#voltar" prefHeight="30.0" prefWidth="70.0" text="Voltar" BorderPane.alignment="TOP_CENTER">
+      <Button mnemonicParsing="false" onAction="#voltar" prefHeight="38.0" prefWidth="85.0" stylesheets="@EstiloButton.css" text="Voltar" BorderPane.alignment="TOP_CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -30,7 +30,7 @@
       </Label>
    </top>
    <bottom>
-      <Button mnemonicParsing="false" onAction="#procurarUpdate" text="Atualizar" BorderPane.alignment="TOP_CENTER">
+      <Button mnemonicParsing="false" onAction="#procurarUpdate" stylesheets="@EstiloButton.css" text="Atualizar" BorderPane.alignment="TOP_CENTER">
          <BorderPane.margin>
             <Insets bottom="50.0" />
          </BorderPane.margin>

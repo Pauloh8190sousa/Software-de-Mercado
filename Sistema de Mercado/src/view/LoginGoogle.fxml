@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.web.WebView?>
 
-<BorderPane fx:id="border" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" stylesheets="@EstiloLoginGoogle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerLoginGoogle">
+<BorderPane fx:id="border" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="542.0" prefWidth="750.0" stylesheets="@EstiloLoginGoogle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerLoginGoogle">
    <center>
       <WebView fx:id="webGoogle" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>

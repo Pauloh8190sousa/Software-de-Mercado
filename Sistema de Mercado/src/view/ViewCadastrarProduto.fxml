@@ -61,7 +61,7 @@
 		</TextField>
 		<DatePicker fx:id="dateValidade" promptText="exemplo: 20/01/1999" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
 			<GridPane.margin>
-				<Insets right="290.0" />
+				<Insets right="280.0" />
 			</GridPane.margin>
 		</DatePicker>
 		<Label text="Data de fabricação" GridPane.halignment="LEFT" GridPane.rowIndex="2">
@@ -71,7 +71,7 @@
 		</Label>
 		<DatePicker fx:id="dateFabricacao" promptText="exemplo: 20/01/1999" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
 			<GridPane.margin>
-				<Insets right="160.0" />
+				<Insets right="150.0" />
 			</GridPane.margin>
 		</DatePicker>
       <Label text="Cod Barra" GridPane.halignment="LEFT" GridPane.rowIndex="4">
