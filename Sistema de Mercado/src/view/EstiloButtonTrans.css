@@ -1,0 +1,11 @@
+.button{
+-fx-background-color: transparent;
+-fx-font-family: "Segoe UI", Helvetica;
+-fx-border-width: 2;
+-fx-border-radius: 15;
+-fx-font-size: 12pt;
+-fx-text-fill: white;
+}
+.button:pressed{
+-fx-border-color: rgb(0, 200, 250);
+}

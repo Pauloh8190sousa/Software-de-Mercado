@@ -13,7 +13,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -81,17 +80,11 @@ public class ControllerViewBase implements Initializable {
 				}else{
 					json.atualizarValorConfig("Logado", true);
 				}
-				Stage s1 = new Stage();
-				Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
-				Scene scene = new Scene(root);
-
 				Stage stage = (Stage) gridPane.getScene().getWindow();
-				stage.close();
-				s1.setMaximized(true);
-				s1.setScene(scene);
-				s1.setTitle("Mercado");
-				s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
-				s1.show();
+				Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
+				Scene scene = new Scene(root,stage.getScene().getWidth(),stage.getScene().getHeight());
+				stage.setScene(scene);
+				
 			} else {
 				JOptionPane.showMessageDialog(null, "Senha ou E-mail incorreto");
 			}
@@ -103,32 +96,18 @@ public class ControllerViewBase implements Initializable {
 
 	@FXML
 	private void acesarViewGoogle() throws Exception {
-		Stage s1 = new Stage();
-		Pane root = FXMLLoader.load(getClass().getResource("/view/LoginGoogle.fxml"));
-		Scene scene = new Scene(root);
-
 		Stage stage = (Stage) gridPane.getScene().getWindow();
-		stage.close();
-		s1.setMaximized(true);
-		s1.setScene(scene);
-		s1.setTitle("Mercado");
-		s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
-		s1.show();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/LoginGoogle.fxml"));
+		Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+		stage.setScene(scene);
 	}
 
 	@FXML
 	private void acessarViewCadastrarAdmin() throws IOException {
-		Stage s1 = new Stage();
-		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewCadastrarAdmin.fxml"));
-		Scene scene = new Scene(root);
-
 		Stage stage = (Stage) gridPane.getScene().getWindow();
-		stage.close();
-		s1.setMaximized(true);
-		s1.setScene(scene);
-		s1.setTitle("Mercado");
-		s1.getIcons().add(new Image("/icons8-full-shopping-basket-30.png"));
-		s1.show();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewCadastrarAdmin.fxml"));
+		Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+		stage.setScene(scene);
 	}
 
 	@Override

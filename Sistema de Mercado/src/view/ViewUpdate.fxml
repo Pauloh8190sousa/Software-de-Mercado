@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -13,13 +15,20 @@
 
 <BorderPane fx:id="border" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="542.0" prefWidth="750.0" stylesheets="@EstiloViewInicioCSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerViewUpdate">
    <left>
-      <Button mnemonicParsing="false" onAction="#voltar" prefHeight="38.0" prefWidth="85.0" stylesheets="@EstiloButton.css" text="Voltar" BorderPane.alignment="TOP_CENTER">
+      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#voltar" prefHeight="63.0" prefWidth="69.0" stylesheets="@EstiloButtonTrans.css" BorderPane.alignment="TOP_CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <BorderPane.margin>
             <Insets left="30.0" top="20.0" />
          </BorderPane.margin>
+         <graphic>
+            <ImageView fitHeight="47.0" fitWidth="49.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../Imagens/icons8-back-40.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </left>
    <top>
