@@ -1,0 +1,15 @@
+.button{
+-fx-padding: 5 22 5 22;
+-fx-border-width: 2;
+-fx-border-radius: 15;   
+-fx-border-color: white;
+-fx-background-color: transparent;
+-fx-font-family: "Times new roman";
+-fx-font-size: 14pt;
+-fx-text-fill: white;
+-fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+.button:pressed{
+-fx-text-fill: black;
+-fx-border-color: black;
+}

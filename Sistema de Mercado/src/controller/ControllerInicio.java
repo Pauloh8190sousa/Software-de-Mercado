@@ -50,6 +50,13 @@ public class ControllerInicio implements Initializable {
 		
 	}
 	@FXML
+	private void viewCaixa(ActionEvent event) throws IOException{
+		Stage stage = (Stage) border.getScene().getWindow();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewCaixa.fxml"));
+		Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+		stage.setScene(scene);
+	}
+	@FXML
 	private void mudarTema(ActionEvent event) {
 		CriarJSON json = new CriarJSON();
 			if (claro.isSelected()) {

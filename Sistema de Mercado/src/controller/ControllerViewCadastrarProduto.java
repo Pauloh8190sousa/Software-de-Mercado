@@ -1,15 +1,21 @@
 package controller;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.function.UnaryOperator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.TextFormatter.Change;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import system.Caixa;
 import tray.animations.AnimationType;
@@ -29,7 +35,16 @@ public class ControllerViewCadastrarProduto implements Initializable{
 	private TextField codBarra;
 	@FXML
 	private TextField gramasCampo;
-
+	@FXML
+	private GridPane grid;
+	
+	@FXML
+	private void voltar(ActionEvent event) throws IOException{
+		Stage stage = (Stage) grid.getScene().getWindow();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewInicio.fxml"));
+		Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+		stage.setScene(scene);
+	}
 	@FXML
 	private void cadastrarProduto(ActionEvent event){
 		if(dateValidade.getValue()!=null && dateFabricacao!=null && !campoNomeProduto.getText().equals("") &&
