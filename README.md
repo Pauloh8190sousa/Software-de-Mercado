@@ -28,6 +28,6 @@ Sistema na área mercantil para controle de estoques de produtos além do gerenc
 |--------------|----------------------------------|---------------------------|---------------------------|---------------------------|-------------------|
 |**29/03/2021**|    **30/03/2021 - 03/04/2021**   |**30/03/2021 - 18/04/2021**|**29/04/2021 - 08/04/2021**|**10/04/2021 - 18/05/2021**|   **20/05/2021**  |
 ## Última atualização
-- Update completo, e construção da view de cadastrar produtos. - **28/04/2021**
-- Andamento da view listar produtos. - **28/04/2021**
-- Adicionado notificações com a API TryTester. - **28/04/2021**
+- Adição da View Caixa. - **10/05/2021**
+- Otimização da navegação de views 100% concluida em todas as telas do sistema. - **06/05/2021**
+- Adição de icones no sistema. - **06/05/2021**
