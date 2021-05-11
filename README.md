@@ -12,12 +12,12 @@ Sistema na área mercantil para controle de estoques de produtos além do gerenc
 - [x] **Notificação do sistema**
 - [x] **Credenciamento do login**
 - [x] **Salvar login e logout**
-- [ ] **Listar produtos**
+- [x] **Listar produtos**
 - [ ] **Leitura de código de barras**
-- [ ] **Cadastrar produtos no banco de dados**
+- [x] **Cadastrar produtos no banco de dados**
 - ## Melhorias e Correções de erros
-- [ ] **Otimização do código e interface de sistema**
-- [ ] **Teste e correções de erros previstos no sistema**
+- [x] **Otimização do código e interface de sistema**
+- [x] **Teste e correções de erros previstos no sistema**
 - [ ] **Correção de erros inesperados**
 - [ ] **Armazenamento em cache para maior eficiencia e rápidez do sistema**  
 - ## Sites de apoio para o desenvolvimento
