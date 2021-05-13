@@ -26,6 +26,7 @@
           <Menu mnemonicParsing="false" text="Sistema">
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#viewAtualizacao" text="Atualizações" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewGrafico" text="Gráficos" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Sobre">

@@ -18,7 +18,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import system.GerenciadorAdmin;
-import tool.CriarJSON;
+import tool.CreateJSON;
 
 public class ControllerViewBase implements Initializable {
 	@FXML
@@ -35,7 +35,7 @@ public class ControllerViewBase implements Initializable {
 	private void adicionarCredenciais(KeyEvent event) {
 		if (campoEmail.getText().equals("") || campoSenha.getText().equals("")) {
 			if (opcao == JOptionPane.YES_OPTION) {
-				CriarJSON credenciais = new CriarJSON();
+				CreateJSON credenciais = new CreateJSON();
 				JSONObject json = credenciais.getCredenciaisJSON();
 				if (json != null) {
 					opcao = JOptionPane.showConfirmDialog(null, "Adicionar credenciais salvas?", "ATENÇÂO",
@@ -65,7 +65,7 @@ public class ControllerViewBase implements Initializable {
 			} else if (gerenciador.getEmailAdmin().equals(campoEmail.getText())
 					&& gerenciador.getSenhaAdmin().equals(campoSenha.getText())) {
 
-				CriarJSON json = new CriarJSON();
+				CreateJSON json = new CreateJSON();
 				if (json.getCredenciaisJSON() == null) {
 					int opcao = JOptionPane.showConfirmDialog(null, "Deseja salvar Credenciais?", "Atenção",
 							JOptionPane.YES_NO_OPTION);
@@ -112,7 +112,7 @@ public class ControllerViewBase implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		CriarJSON json = new CriarJSON();
+		CreateJSON json = new CreateJSON();
 		JSONObject config = json.getConfigJSON();
 		if (config != null) {
 			String tema = (String) config.get("Tema");

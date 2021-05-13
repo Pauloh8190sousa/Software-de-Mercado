@@ -14,7 +14,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import tool.CriarJSON;
+import tool.CreateJSON;
 
 public class ControllerInicio implements Initializable {
 	@FXML
@@ -26,6 +26,13 @@ public class ControllerInicio implements Initializable {
 	@FXML
 	private RadioMenuItem escuro;
 
+	@FXML
+	private void viewGrafico(ActionEvent event) throws IOException{
+		Stage stage = (Stage) border.getScene().getWindow();
+		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewGrafico.fxml"));
+		Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+		stage.setScene(scene);
+	}
 	@FXML
 	private void viewListarProduto(ActionEvent event) throws IOException{
 		Stage stage = (Stage) border.getScene().getWindow();
@@ -58,7 +65,7 @@ public class ControllerInicio implements Initializable {
 	}
 	@FXML
 	private void mudarTema(ActionEvent event) {
-		CriarJSON json = new CriarJSON();
+		CreateJSON json = new CreateJSON();
 			if (claro.isSelected()) {
 				border.getStylesheets().remove(border.getStylesheets().get(border.getStylesheets().size() - 1));
 				border.getStylesheets().add(getClass().getResource("/view/EstiloWhiteInicio.css").toString());
@@ -84,14 +91,14 @@ public class ControllerInicio implements Initializable {
 		Pane root = FXMLLoader.load(getClass().getResource("/view/ViewLogin.fxml"));
 		Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
 
-		CriarJSON json = new CriarJSON();
+		CreateJSON json = new CreateJSON();
 		json.atualizarValorConfig("Logado", false);
 		stage.setScene(scene);
 	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		CriarJSON json = new CriarJSON();
+		CreateJSON json = new CreateJSON();
 		JSONObject config = json.getConfigJSON();
 		String tema = (String) config.get("Tema");
 		if(tema!=null){

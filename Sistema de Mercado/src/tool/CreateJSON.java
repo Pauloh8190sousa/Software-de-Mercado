@@ -10,7 +10,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class CriarJSON {
+public class CreateJSON {
 
 	public void criarConfigJSON() {
 		JSONObject json = null;
