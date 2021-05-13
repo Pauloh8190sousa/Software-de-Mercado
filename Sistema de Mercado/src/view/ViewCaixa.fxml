@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="grid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@EstiloViewCadastrarProduto.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerViewCaixa">
+<GridPane fx:id="grid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="750.0" stylesheets="@EstiloViewCadastrarProduto.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerViewCaixa">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -28,9 +28,17 @@
          </cursor>
       </Button>
       <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" />
-      <Button defaultButton="true" mnemonicParsing="false" onAction="#somar" text="Somar" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+      <Button defaultButton="true" mnemonicParsing="false" onAction="#somar" text="Somar" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <GridPane.margin>
-            <Insets bottom="50.0" />
+            <Insets bottom="50.0" top="425.0" />
+         </GridPane.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#limpar" text="Limpar" GridPane.halignment="CENTER">
+         <GridPane.margin>
+            <Insets top="270.0" />
          </GridPane.margin>
          <cursor>
             <Cursor fx:constant="HAND" />

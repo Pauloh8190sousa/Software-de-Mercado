@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -26,12 +27,22 @@ public class ControllerViewCaixa implements Initializable {
 
 	@FXML
 	private void teclado(KeyEvent keyEvent) {
-		if (keyEvent.getText().matches("[0-9]")) {
+		if(textArea.getText().contains("-") && keyEvent.getCode() != KeyCode.ENTER){
+			TrayNotification tray = new TrayNotification();
+			AnimationType type = AnimationType.POPUP;
+			tray.setAnimationType(type);
+			tray.setTitle("SOMA TOTAL!");
+			tray.setMessage("SOMA TOTAL JÁ FOI EXECUTADA");
+			tray.setNotificationType(NotificationType.WARNING);
+			tray.showAndDismiss(Duration.millis(3000));
+		}else if (keyEvent.getText().matches("[0-9]")) {
 			if (textArea.getText().equals("")) {
 				textArea.setText(keyEvent.getText());
 			} else {
 				textArea.setText(textArea.getText() + "\n" + keyEvent.getText());
 			}
+		}else if(keyEvent.getCode() == KeyCode.ENTER){
+			somar(null);
 		}
 	}
 
@@ -76,7 +87,7 @@ public class ControllerViewCaixa implements Initializable {
 			tray.setNotificationType(NotificationType.INFORMATION);
 			tray.showAndDismiss(Duration.millis(2000));
 		}
-
+		
 	}
 
 	@FXML
