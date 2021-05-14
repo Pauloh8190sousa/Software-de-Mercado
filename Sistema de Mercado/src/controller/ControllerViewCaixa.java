@@ -15,6 +15,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import system.Caixa;
+import system.Product;
 import tray.animations.AnimationType;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
@@ -27,7 +29,7 @@ public class ControllerViewCaixa implements Initializable {
 
 	@FXML
 	private void teclado(KeyEvent keyEvent) {
-		if(textArea.getText().contains("-") && keyEvent.getCode() != KeyCode.ENTER){
+		if (textArea.getText().contains("-") && keyEvent.getCode() != KeyCode.ENTER) {
 			TrayNotification tray = new TrayNotification();
 			AnimationType type = AnimationType.POPUP;
 			tray.setAnimationType(type);
@@ -35,14 +37,28 @@ public class ControllerViewCaixa implements Initializable {
 			tray.setMessage("SOMA TOTAL JÁ FOI EXECUTADA");
 			tray.setNotificationType(NotificationType.WARNING);
 			tray.showAndDismiss(Duration.millis(3000));
-		}else if (keyEvent.getText().matches("[0-9]")) {
-			if (textArea.getText().equals("")) {
-				textArea.setText(keyEvent.getText());
-			} else {
-				textArea.setText(textArea.getText() + "\n" + keyEvent.getText());
+		} else if (keyEvent.getText().matches("[0-9]")) {
+			textArea.setText(textArea.getText() + keyEvent.getText());
+		} else if (keyEvent.getCode() == KeyCode.ENTER) {
+			double codBarra = Double.parseDouble(textArea.getText());
+			Product p = Caixa.lerCodBarra(codBarra);
+			if (p != null) {
+				textArea.setText(p.getPreco() + "\n");
+			}else{
+				TrayNotification tray = new TrayNotification();
+				AnimationType type = AnimationType.POPUP;
+				tray.setAnimationType(type);
+				tray.setTitle("ERRO CÓDIGO DE BARRAS!");
+				tray.setMessage("CÓDIGO DE BARRAS NÃO ENCONTRADO!");
+				tray.setNotificationType(NotificationType.ERROR);
+				tray.showAndDismiss(Duration.millis(2000));
 			}
-		}else if(keyEvent.getCode() == KeyCode.ENTER){
-			somar(null);
+
+		} else if (keyEvent.getCode() == KeyCode.BACK_SPACE) {
+			if (!textArea.getText().equals("")) {
+				int ultimaStr = textArea.getText().length() - 1;
+				textArea.setText(textArea.getText().substring(0, ultimaStr));
+			}
 		}
 	}
 
@@ -62,19 +78,19 @@ public class ControllerViewCaixa implements Initializable {
 		tray.setTitle("SOMA TOTAL!");
 
 		if (textArea.getText().contains("-")) {
-			
+
 			tray.setTitle("ATENÇÃO!");
 			tray.setMessage("SOMA TOTAL JÁ FOI EXECUTADA");
 			tray.setNotificationType(NotificationType.WARNING);
 			tray.showAndDismiss(Duration.millis(3000));
-			
-		}else if(textArea.getText().equals("")){
+
+		} else if (textArea.getText().equals("")) {
 			tray.setTitle("NENHUM NÚMERO FOI INSERIDO");
 			tray.setMessage("NÃO HÁ NÚMEROS\nDIGITE ALGUM NÚMERO PARA SOMAR!");
 			tray.setNotificationType(NotificationType.ERROR);
 			tray.showAndDismiss(Duration.millis(3000));
-		}else {
-			
+		} else {
+
 			String[] array = textArea.getText().split("\n");
 			float soma = 0;
 			for (int i = 0; i < array.length; i++) {
@@ -87,7 +103,7 @@ public class ControllerViewCaixa implements Initializable {
 			tray.setNotificationType(NotificationType.INFORMATION);
 			tray.showAndDismiss(Duration.millis(2000));
 		}
-		
+
 	}
 
 	@FXML

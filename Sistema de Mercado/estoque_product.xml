@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<system.Estoque>
+  <produtos>
+    <system.Product>
+      <preco>20.0</preco>
+      <codBarra>2021544.0</codBarra>
+      <descricao>Teste</descricao>
+      <grama>566.0</grama>
+      <dataValidade>20/5/2022</dataValidade>
+      <dataFabricacao>5/5/2021</dataFabricacao>
+    </system.Product>
+  </produtos>
+</system.Estoque>
