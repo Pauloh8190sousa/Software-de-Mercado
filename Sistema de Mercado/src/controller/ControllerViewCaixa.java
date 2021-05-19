@@ -39,28 +39,30 @@ public class ControllerViewCaixa implements Initializable {
 			tray.showAndDismiss(Duration.millis(3000));
 		} else if (keyEvent.getText().matches("[0-9]")) {
 			textArea.setText(textArea.getText() + keyEvent.getText());
-		} else if (keyEvent.getCode() == KeyCode.ENTER) {
-			double codBarra = Double.parseDouble(textArea.getText());
-			Product p = Caixa.lerCodBarra(codBarra);
-			if (p != null) {
-				textArea.setText(p.getPreco() + "\n");
-			}else{
-				TrayNotification tray = new TrayNotification();
-				AnimationType type = AnimationType.POPUP;
-				tray.setAnimationType(type);
-				tray.setTitle("ERRO CÓDIGO DE BARRAS!");
-				tray.setMessage("CÓDIGO DE BARRAS NÃO ENCONTRADO!");
-				tray.setNotificationType(NotificationType.ERROR);
-				tray.showAndDismiss(Duration.millis(2000));
-			}
+		} 
+//		else if (keyEvent.getCode() == KeyCode.ENTER) {
+//			double codBarra = Double.parseDouble(textArea.getText());
+//			Product p = Caixa.lerCodBarra(codBarra);
+//			if (p != null) {
+//				textArea.setText(p.getPreco() + "\n");
+//			}
+//			else{
+//				TrayNotification tray = new TrayNotification();
+//				AnimationType type = AnimationType.POPUP;
+//				tray.setAnimationType(type);
+//				tray.setTitle("ERRO CÓDIGO DE BARRAS!");
+//				tray.setMessage("CÓDIGO DE BARRAS NÃO ENCONTRADO!");
+//				tray.setNotificationType(NotificationType.ERROR);
+//				tray.showAndDismiss(Duration.millis(2000));
+//			}
 
-		} else if (keyEvent.getCode() == KeyCode.BACK_SPACE) {
+		 else if (keyEvent.getCode() == KeyCode.BACK_SPACE) {
 			if (!textArea.getText().equals("")) {
 				int ultimaStr = textArea.getText().length() - 1;
 				textArea.setText(textArea.getText().substring(0, ultimaStr));
 			}
 		}
-	}
+}
 
 	@FXML
 	private void voltar(ActionEvent event) throws IOException {
