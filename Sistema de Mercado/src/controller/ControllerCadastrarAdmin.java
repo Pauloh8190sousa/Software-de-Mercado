@@ -30,7 +30,7 @@ public class ControllerCadastrarAdmin implements Initializable {
 	private PasswordField campoConfirmar;
 	@FXML
 	private GridPane grid;
-
+	
 	@FXML
 	private void acaoButtonCadastrar(ActionEvent event) throws IOException {
 		GerenciadorAdmin gerenciadorAdmin = GerenciadorAdmin.getInstance();
