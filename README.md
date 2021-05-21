@@ -1,4 +1,5 @@
 # Software-de-Mercado
+- # Software em desenvolvimento
 Sistema na área mercantil para controle de estoques de produtos além do gerenciamento da ***RECEITA*** do mercado, com base na compra dos produtos disponiveis no estoque, Esse projeto tem o objetivo educativo e de aprendizado **SEM FINS LUCRATIVOS**, no momento serve para experimento e compartilhamento de ideias com a comunidade.
 ### Ressalva
 **Esse projeto pode há ter fins lucrativos no FUTURO, então futuramente possa se tornar indisponível ou privado o mesmo**.
